@@ -3,64 +3,46 @@
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-import { CiMenuFries} from 'react-icons/ci' 
+import { CiMenuFries } from 'react-icons/ci';
 
 const links = [
-    {
-        name: 'home',
-        path: '/'
-    },
-    {
-        name: 'services',
-        path: '/services'
-    },
-    {
-        name: 'resume',
-        path: '/resume'
-    },
-    {
-        name: 'work',
-        path: '/work'
-    },
-    {
-        name: 'contact',
-        path: '/contact'
-    },
-]
+    { name: 'home', path: '/' },
+    { name: 'services', path: '/services' },
+    { name: 'resume', path: '/resume' },
+    { name: 'work', path: '/work' },
+    { name: 'contact', path: '/contact' },
+];
 
 const MobileNav = () => {
-    const pathname = usePathname()
-  return ( 
+    const pathname = usePathname();
+    return (
         <Sheet>
-      <SheetTrigger className="flex justify-center items-center">
-        <CiMenuFries className="text-[32px] text-accent" /> 
-      </SheetTrigger>
-      <SheetContent className="flex flex-col">
-        {/* logo */}
-        <div className='mt-32 mb-40 text-center text-2xl'>
-            <Link href='/'>
-                <h1 className='text-4xl font-semibold'>Daud<span className='text-accent'>.</span> </h1>
-            </Link>
-        </div>
-
-        {/* nav */}
-        <nav className='flex flex-col justify-center items-center gap-8'>
-            {links.map((link, index) => {
-                return ( 
-                    <Link 
-                        href={link.path}
-                        key={index}
-                        className={`${link.path === pathname && "text-accent border-b-2 border-accent"} 
-                        text-xl capitalize hover:text-accent transition-all`}> 
-                        {link.name} 
+            <SheetTrigger className="flex justify-center items-center p-3 focus:outline-none">
+                <CiMenuFries className="text-[32px] text-accent" />
+            </SheetTrigger>
+            <SheetContent className="flex flex-col items-center p-6 w-full max-w-xs bg-black shadow-lg">
+                {/* Logo */}
+                <div className='mt-10 mb-10 text-center'>
+                    <Link href='/'>
+                        <h1 className='text-3xl font-semibold'>Daud<span className='text-accent'>.</span></h1>
                     </Link>
-                )
-            })}
-        </nav>
+                </div>
+                
+                {/* Navigation */}
+                <nav className='flex flex-col items-center gap-6 w-full'>
+                    {links.map((link, index) => (
+                        <Link 
+                            href={link.path} 
+                            key={index} 
+                            className={`w-full text-center text-lg capitalize py-2 transition-all ${link.path === pathname ? "text-accent border-b-2 border-accent" : "hover:text-accent"}`}
+                        >
+                            {link.name}
+                        </Link>
+                    ))}
+                </nav>
+            </SheetContent>
+        </Sheet>
+    );
+};
 
-      </SheetContent>
-    </Sheet>
-  )
-}
-
-export default MobileNav
+export default MobileNav;

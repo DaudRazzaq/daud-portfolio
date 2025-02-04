@@ -15,6 +15,16 @@ import WorkSliderBtns from "@/components/WorkSliderBtns"
 const projects = [
   {
     num: '01', 
+    category: 'fullstack',
+    title: 'project 2',
+    description: 'Build a Coffee shop website in react.',
+    stack: [{ name: 'HTML 5, CSS 3, JavaScript' }],
+    image: '/assets/work/cafena.jpg',
+    live: '',
+    github: "https://github.com/DaudRazzaq/Coffee-Shop-Website-Design"
+  },
+  {
+    num: '02', 
     category: 'front-end',
     title: 'project 1',
     description: 'Build a simple front page of resume.',
@@ -23,16 +33,7 @@ const projects = [
     live: 'https://resume-eta-teal.vercel.app/',
     github: ""
   },
-  // {
-  //   num: '02', 
-  //   category: 'fullstack',
-  //   title: 'project 2',
-  //   description: 'Build my Portfolio.',
-  //   stack: [{ name: 'HTML 5, CSS 3, JavaScript' }],
-  //   image: '/assets/work/portfolio.jpg',
-  //   live: 'https://my-portfolio-mtm-iota.vercel.app/',
-  //   github: ""
-  // },
+
   {
     num: '02', 
     category: 'front-end',
@@ -86,7 +87,7 @@ const Work = () => {
   return (
     <motion.section
     initial={{ opacity: 0 }}
-    animate={{ opacity: 1, transition: {delay: 2.4, duration: 0.4, ease:'easeIn'} }}
+    animate={{ opacity: 1, transition: {delay: 2.4 , duration: 0.4, ease:'easeIn'} }}
     className="min-h-[80vh] flex flex-col justify-center py-12 xl:px-0"
     transition={{ duration: 0.5 }}
     >
