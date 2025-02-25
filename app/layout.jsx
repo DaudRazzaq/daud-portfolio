@@ -1,5 +1,6 @@
 import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { SpeedInsights } from "@/@vercel/speed-insights/dist/next";
 
 // components
 import Header from "@/components/Header";

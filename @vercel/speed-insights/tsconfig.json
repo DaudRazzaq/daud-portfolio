@@ -1,0 +1,7 @@
+{
+  "extends": "../../jsconfig.json",
+  "compilerOptions": {
+    "module": "esnext"
+  },
+  "include": ["src", "./test.setup.ts"]
+}
